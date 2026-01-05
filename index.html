@@ -1,28 +1,259 @@
 <!DOCTYPE html>
-<html>
- <head>
-   <title>YOUR NAME Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css">
- </head>
- <body>
-   <nav>
-     <ul>
-       <li><a href=”/”>Home</a></li>
-       <li><a href=”/about”>About</a></li>
-       <li><a href=”/resume”>Resume</a></li>
-       <li><a href=”/blog”>Blog</a></li>
-     </ul>
-   </nav>
-   <div class=”container”>
-     <div class=”blurb”>
-       <h1>Hi, I am YOUR NAME!</h1>
-       <p>This is my first page for my personal website!</a></p>
-     </div>
-   </div>
-   <footer>
-   <ul>
-     <li><a href=”mailto:YOUREMAIL”>YOUREMAIL</a></li>
-   </ul>
-   </footer>
- </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artem Dementyev | Research Scientist</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Smooth transitions for background colors */
+        .transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
+    </style>
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-300 antialiased max-w-3xl mx-auto px-6 py-12 lg:py-20 transition-colors">
+
+    <div class="absolute top-6 right-6">
+        <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <svg id="theme-toggle-light-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h1a1 1 0 100 2h-1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+            <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <header class="flex flex-col-reverse sm:flex-row items-start justify-between mb-12 relative">
+        <div class="sm:w-3/4 pr-0 sm:pr-8">
+            <h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">Artem Dementyev</h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 mb-4">Research Scientist at <span class="font-semibold text-slate-900 dark:text-slate-200">Google DeepMind</span></p>
+            
+            <p class="leading-relaxed mb-6 text-slate-700 dark:text-slate-300">
+                I am a Research Scientist at DeepMind in Cambridge, MA. My research focuses on 
+                <strong class="font-semibold text-slate-900 dark:text-slate-200">HCI</strong> and 
+                <strong class="font-semibold text-slate-900 dark:text-slate-200">Wearable Computing</strong>. 
+                I am particularly interested in how we can leverage novel sensors and acoustics to build robust representations.
+            </p>
+            
+            <p class="leading-relaxed mb-6 text-slate-700 dark:text-slate-300">
+                Previously, I received my PhD from the MIT Media Lab, where I was advised by Joe Paradiso.
+            </p>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                <a href="mailto:artemd@google.com" class="hover:text-blue-800 dark:hover:text-blue-200 transition-colors">Email</a>
+                <a href="https://scholar.google.com/citations?user=dDv1lycAAAAJ&hl=en&oi=ao" class="hover:text-blue-800 dark:hover:text-blue-200 transition-colors">Google Scholar</a>
+                <a href="https://github.com/adementyev" class="hover:text-blue-800 dark:hover:text-blue-200 transition-colors">GitHub</a>
+                <a href="https://twitter.com/artem_dementyev" class="hover:text-blue-800 dark:hover:text-blue-200 transition-colors">Twitter/X</a>
+                <a href="https://www.linkedin.com/in/adementyev/" class="hover:text-blue-800 dark:hover:text-blue-200 transition-colors">LinkedIn</a>
+            </div>
+        </div>
+        
+        <div class="sm:w-1/4 mb-6 sm:mb-0">
+            <img src="https://via.placeholder.com/150" alt="Artem Dementyev" class="rounded-full w-32 h-32 object-cover border-2 border-slate-100 dark:border-slate-800 shadow-sm transition-colors">
+        </div>
+    </header>
+
+    <hr class="border-slate-200 dark:border-slate-800 my-8 transition-colors">
+
+    <section class="mb-12">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4">News</h2>
+        <ul class="space-y-3 text-slate-700 dark:text-slate-300">
+            <li>
+                <span class="font-mono text-sm text-slate-500 dark:text-slate-500 mr-2">[Feb 2025]</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-200">SpeechCompass</span> won the Best Paper Award at CHI 2025!
+            </li>
+            <li>
+                <span class="font-mono text-sm text-slate-500 dark:text-slate-500 mr-2">[Jan 2025]</span>
+                Joined Google DeepMind full-time.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Selected Publications</h2>
+        
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-snug">
+                <a href="https://arxiv.org/abs/2502.08848" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    SpeechCompass: Enhancing Mobile Captioning with Diarization and Directional Guidance via Multi-Microphone Localization
+                </a>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mt-2">
+                <span class="font-semibold border-b-2 border-slate-300 dark:border-slate-600">Artem Dementyev</span>, Dimitri Kanevsky, Samuel J. Yang, Mathieu Parvaix, Chiong Lai, Alex Olwal
+            </p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 italic">
+                ACM Conference on Human Factors in Computing Systems (CHI), 2025
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 ml-2 align-middle">
+                    🏆 Best Paper Award
+                </span>
+            </p>
+            <div class="mt-2 space-x-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                <a href="https://arxiv.org/pdf/2502.08848.pdf" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[PDF]</a>
+                <a href="https://arxiv.org/abs/2502.08848" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[ArXiv]</a>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-snug">
+                <a href="https://arxiv.org/abs/2409.18239" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Towards Sub-millisecond Latency Real-Time Speech Enhancement Models on Hearables
+                </a>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mt-2">
+                <span class="font-semibold border-b-2 border-slate-300 dark:border-slate-600">Artem Dementyev</span>, Chandan K. A. Reddy, Scott Wisdom, Navin Chatlani, John R. Hershey, Richard F. Lyon
+            </p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 italic">
+                IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2025
+            </p>
+            <div class="mt-2 space-x-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                <a href="https://arxiv.org/pdf/2409.18239.pdf" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[PDF]</a>
+                <a href="https://arxiv.org/abs/2409.18239" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[ArXiv]</a>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-snug">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3491102.3517674" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Hidden Interfaces for Ambient Computing: Enabling Interaction in Everyday Materials through High-brightness Visuals
+                </a>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mt-2">
+                Alex Olwal, <span class="font-semibold border-b-2 border-slate-300 dark:border-slate-600">Artem Dementyev</span>
+            </p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 italic">
+                ACM Conference on Human Factors in Computing Systems (CHI), 2022
+            </p>
+            <div class="mt-2 space-x-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3491102.3517674" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[PDF]</a>
+                <a href="https://dl.acm.org/doi/abs/10.1145/3491102.3517674" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[ACM]</a>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-snug">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3472749.3474772" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    VHP: Vibrotactile Haptics Platform for On-body Applications
+                </a>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mt-2">
+                <span class="font-semibold border-b-2 border-slate-300 dark:border-slate-600">Artem Dementyev</span>, Pascal Getreuer, Dimitri Kanevsky, Malcolm Slaney, Richard F. Lyon
+            </p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 italic">
+                ACM Symposium on User Interface Software and Technology (UIST), 2021
+            </p>
+            <div class="mt-2 space-x-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3472749.3474772" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[PDF]</a>
+                <a href="https://dl.acm.org/doi/abs/10.1145/3472749.3474772" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[ACM]</a>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-snug">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3379337.3415823" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Haptics with Input: Back-EMF in Linear Resonant Actuators to Enable Touch, Force, and Pressure Sensing
+                </a>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mt-2">
+                <span class="font-semibold border-b-2 border-slate-300 dark:border-slate-600">Artem Dementyev</span>, Alex Olwal, Richard F. Lyon
+            </p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 italic">
+                ACM Symposium on User Interface Software and Technology (UIST), 2020
+            </p>
+            <div class="mt-2 space-x-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3379337.3415823" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[PDF]</a>
+                <a href="https://dl.acm.org/doi/abs/10.1145/3379337.3415823" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[ACM]</a>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-snug">
+                <a href="https://dl.acm.org/doi/abs/10.1145/2984511.2984531" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Rovables: Miniature On-Body Robots as Mobile Wearables
+                </a>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mt-2">
+                <span class="font-semibold border-b-2 border-slate-300 dark:border-slate-600">Artem Dementyev</span>, Hsin-Liu (Cindy) Kao, Inrak Choi, Deborah Ajilo, Maggie Xu, Joseph A. Paradiso, Chris Schmandt, Sean Follmer
+            </p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 italic">
+                ACM Symposium on User Interface Software and Technology (UIST), 2016
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 ml-2 align-middle">
+                    🏆 Best Paper Award
+                </span>
+            </p>
+            <div class="mt-2 space-x-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/2984511.2984531" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[PDF]</a>
+                <a href="https://dl.acm.org/doi/abs/10.1145/2984511.2984531" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[ACM]</a>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 leading-snug">
+                <a href="https://dl.acm.org/doi/abs/10.1145/2642918.2647396" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    WristFlex: High Resolution Gesture Recognition with Wrist-Worn Pressure Sensors
+                </a>
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mt-2">
+                <span class="font-semibold border-b-2 border-slate-300 dark:border-slate-600">Artem Dementyev</span>, Joseph A. Paradiso
+            </p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 italic">
+                ACM Symposium on User Interface Software and Technology (UIST), 2014
+            </p>
+            <div class="mt-2 space-x-2 text-sm font-medium text-blue-600 dark:text-blue-400">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/2642918.2647396" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[PDF]</a>
+                <a href="https://dl.acm.org/doi/abs/10.1145/2642918.2647396" class="hover:underline hover:text-blue-800 dark:hover:text-blue-200 transition-colors">[ACM]</a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="mt-20 pt-8 border-t border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-600 text-sm text-center transition-colors">
+        &copy; 2026 Artem Dementyev.
+    </footer>
+
+    <script>
+        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        var themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (localStorage.theme === 'dark') {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+    </script>
+</body>
 </html>
